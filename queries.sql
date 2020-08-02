@@ -282,3 +282,64 @@ ON (ce.emp_no = de.emp_no)
 INNER JOIN departments AS d
 ON (de.dept_no = d.dept_no)
 WHERE d.dept_name IN ('Sales', 'Development');
+
+--CHALLENGE 7 
+
+--Create new table for retiring employees
+SELECT emp_no, first_name, last_name
+INTO retirement_info
+FROM employees
+WHERE (birth_date BETWEEN '1952-01-01' AND '1955-12-31')
+AND (hire_date BETWEEN '1985-01-01' AND '1988-12-31');
+
+-- Creating a table to hold the info 
+SELECT ri.emp_no,
+	ri.first_name,
+	ri.last_name,
+	de.to_date
+INTO current_emp
+FROM retirement_info as ri
+LEFT JOIN dept_emp as de 
+ON ri.emp_no = de.emp_no
+WHERE de.to_date = ('9999-01-01')
+
+--Create a table containing the number of employees who are about to retire
+SELECT ce.emp_no, 
+	   ce.first_name, 
+	   ce.last_name,
+	   ti.title,
+	   s.salary,
+	   ti.from_date
+INTO employees_retiring_byTitle
+FROM titles as ti
+INNER JOIN current_emp as ce
+ON (ti.emp_no = ce.emp_no)
+INNER JOIN salaries as s
+ON (ce.emp_no = s.emp_no);
+
+SELECT COUNT(*) FROM employees_retiring_byTitle;
+
+-- Partition the data to show only most recent title per employee
+SELECT emp_no,
+		 first_name,
+		 last_name,
+		 title,
+		 salary,
+		 from_date
+--INTO employees_retiring_noDup
+FROM
+ (SELECT emp_no,
+		 first_name,
+		 last_name,
+		 title,
+		 salary,
+  		from_date, ROW_NUMBER() OVER
+ (PARTITION BY (emp_no)
+ ORDER BY from_date DESC) rn
+ FROM employees_retiring_byTitle
+ ) tmp WHERE rn = 1
+ORDER BY emp_no;
+
+--Counting unique values 
+SELECT COUNT(*) FROM employees_retiring_noDup;
+
