@@ -343,3 +343,17 @@ ORDER BY emp_no;
 --Counting unique values 
 SELECT COUNT(*) FROM employees_retiring_noDup;
 
+--Deliverable 2 - creating a chart with eligible members for mentorship program 
+SELECT e.emp_no, 
+	   e.first_name, 
+	   e.last_name,
+	   ti.title,
+	   de.from_date,
+	   de.to_date
+--INTO employees_retiring_byTitle
+FROM employees as e
+INNER JOIN dept_emp as ce
+ON (ti.emp_no = ce.emp_no)
+INNER JOIN salaries as s
+ON (ce.emp_no = s.emp_no)
+WHERE (birth_date BETWEEN '1965-01-01' AND '1965-12-31')
