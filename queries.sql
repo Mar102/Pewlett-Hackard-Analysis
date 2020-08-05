@@ -326,7 +326,7 @@ SELECT emp_no,
 		 title,
 		 salary,
 		 from_date
---INTO employees_retiring_noDup
+INTO employees_retiring_noDup
 FROM
  (SELECT emp_no,
 		 first_name,
@@ -350,10 +350,39 @@ SELECT e.emp_no,
 	   ti.title,
 	   de.from_date,
 	   de.to_date
---INTO employees_retiring_byTitle
+INTO mentorship_eligibility
 FROM employees as e
-INNER JOIN dept_emp as ce
-ON (ti.emp_no = ce.emp_no)
-INNER JOIN salaries as s
-ON (ce.emp_no = s.emp_no)
+INNER JOIN dept_emp as de
+ON (e.emp_no = de.emp_no)
+INNER JOIN titles as ti
+ON (ti.emp_no = e.emp_no)
 WHERE (birth_date BETWEEN '1965-01-01' AND '1965-12-31')
+	AND (de.to_date = '9999-01-01');
+
+-- Number of employees available for mentorship role (2382)
+SELECT COUNT(*) FROM mentorship_eligibility;
+
+-- Checking for duplicates. Partition the data to show only most recent title per employee
+SELECT emp_no, 
+	   first_name, 
+	   last_name,
+	   title,
+	   from_date,
+	   to_date
+INTO mentorship_eligibility_noDup
+FROM
+ (SELECT emp_no, 
+	   first_name, 
+	   last_name,
+	   title,
+	   from_date,
+	   to_date, ROW_NUMBER() OVER
+ (PARTITION BY (emp_no)
+ ORDER BY from_date DESC) rn
+ FROM mentorship_eligibility
+ ) tmp WHERE rn = 1
+ORDER BY emp_no;
+
+-- Number of employees available for mentorship role (1549)
+SELECT COUNT(*) FROM mentorship_eligibility_noDup;
+
