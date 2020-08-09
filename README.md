@@ -14,4 +14,6 @@ Software: PostgreSQL11.8 (pgAdmin 4.23)
 
 * Created a ERD diagram to guide the completion of deliverables.
 ![](https://github.com/Mar102/Pewlett-Hackard-Analysis/blob/master/EmployeeDB.png)
-* Deliverable 1: 
+
+* Task description, Deliverable 1: I created a table containing the number of employees who are about to retire (those born 1952-1955), grouped by job title. I used an inner join to connect the previously created tables-- Current Employees, Titles and Salary --
+
