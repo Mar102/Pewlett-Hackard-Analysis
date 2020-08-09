@@ -22,3 +22,4 @@ Task description, Deliverable 1: I created a table containing the number of empl
 - from_date
 - Salary
 
+After noticing substantial duplicates in the data, I created a new table that includes only the most recent title of each employee, no duplicates. The duplicated items were assessed using partitions in data. 
