@@ -10,4 +10,5 @@ Data Source: departments.csv, employees.csv, dept_emp.csv, dept_manager.csv, sal
 Software: PostgreSQL11.8 (pgAdmin 4.23)
 
 ## Summary
+* Summary of queries created for the project:
 
