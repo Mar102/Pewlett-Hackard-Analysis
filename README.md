@@ -12,3 +12,6 @@ Software: PostgreSQL11.8 (pgAdmin 4.23)
 ## Summary
 * Summary of queries created for the project: https://github.com/Mar102/Pewlett-Hackard-Analysis/blob/master/queries.sql
 
+* Created a ERD diagram to guide the completion of deliverables.
+![alt text](http://url/to/img.png)
+* Deliverable 1: 
