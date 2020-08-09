@@ -22,4 +22,11 @@ Task description, Deliverable 1: I created a table containing the number of empl
 - from_date
 - Salary
 
-After noticing substantial duplicates in the data, I created a new table that includes only the most recent title of each employee, no duplicates. The duplicated items were assessed using partitions in data and saved under a new CSV file titled, "employees_retiring_noDup."
+After noticing substantial duplicates in the data, I created a new table that includes only the most recent title of each employee, no duplicates. The duplicated items were assessed using partitions in data and saved under a new CSV file titled, "employees_retiring_noDup." The partition decreased the data from 54,722 to 33,118 values.
+
+Task description, Deliverable 2: Created a new table to hold employees eligible to participate in mentorship programs:
+* Employee number
+* First and last name
+* Title
+* from_date and to_date
+
