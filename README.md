@@ -10,14 +10,15 @@ Data Source: departments.csv, employees.csv, dept_emp.csv, dept_manager.csv, sal
 Software: PostgreSQL11.8 (pgAdmin 4.23)
 
 ## Summary
-* Summary of queries created for the project: https://github.com/Mar102/Pewlett-Hackard-Analysis/blob/master/queries.sql
+Summary of queries created for the project: https://github.com/Mar102/Pewlett-Hackard-Analysis/blob/master/queries.sql
 
-* Created a ERD diagram to guide the completion of deliverables.
+Created a ERD diagram to guide the completion of deliverables.
 ![](https://github.com/Mar102/Pewlett-Hackard-Analysis/blob/master/EmployeeDB.png)
 
-* Task description, Deliverable 1: I created a table containing the number of employees who are about to retire (those born 1952-1955), grouped by job title. I used an inner join to connect the previously created tables-- Current Employees, Titles and Salary -- to pull only the matching items between all values within the tables. After exporting it to a CSV file, employees_retiring_byTitle.csv, the able contained the following information:
-** Employee number
-** First and last name
-** Title
-** from_date
-** Salary
+Task description, Deliverable 1: I created a table containing the number of employees who are about to retire (those born 1952-1955), grouped by job title. I used an inner join to connect the previously created tables-- Current Employees, Titles and Salary -- to pull only the matching items between all values within the tables. After exporting it to a CSV file, employees_retiring_byTitle.csv, the able contained the following information:
+- Employee number
+- First and last name
+- Title
+- from_date
+- Salary
+
