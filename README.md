@@ -39,3 +39,6 @@ Lastly, I grouped the data by title for easier comparison.
 ![](https://github.com/Mar102/Pewlett-Hackard-Analysis/blob/master/Mentorship_byTitle.PNG)
 
 
+Analysis:
+As expected, Pewlett-Hackard's near-term retiring employees are made up of senior employees who must pass on the knowledge to the new employees and future senior leadership. Considering the amount of future retirees, Pewlett-Hackard should look beyond just employees born in 1965. It should use all of its available talent to develop tier groups for eligible mentors (born in 1952-55) and hire new talent. In terms of data weakenesses, the titles were limiting in focusing more on engineering jobs and grouping most others under "Senior Staff." 
+
