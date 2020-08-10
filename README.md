@@ -25,7 +25,7 @@ Task description, Deliverable 1: I created a table containing the number of empl
 After noticing substantial duplicates in the data, I created a new table that includes only the most recent title of each employee, no duplicates. The duplicated items were assessed using partitions in data and saved under a new CSV file titled, "retiring_noDup.csv" The partition decreased the data from 54,722 to 33,118 values.
 
 Then, I created another table to group my non-duplicated data by titles.
-![](https://github.com/Mar102/Pewlett-Hackard-Analysis/blob/master/EmployeesRetiringbyTitle.png)
+![](https://github.com/Mar102/Pewlett-Hackard-Analysis/blob/master/EmployeesRetiringbyTitle.PNG)
 
 Task description, Deliverable 2: Created a new table, exported as "mentorship_eligibility.csv," to hold employees eligible to participate in mentorship programs. I once more used inner joins to only capture matching values between my employee, titles and department employee tables. The final table contains the following data points:
 * Employee number
