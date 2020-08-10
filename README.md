@@ -27,11 +27,15 @@ After noticing substantial duplicates in the data, I created a new table that in
 Then, I created another table to group my non-duplicated data by titles.
 ![](https://github.com/Mar102/Pewlett-Hackard-Analysis/blob/master/EmployeesRetiringbyTitle.png)
 
-Task description, Deliverable 2: Created a new table, exported as "mentorship_eligibility.csv," to hold employees eligible to participate in mentorship programs. I once more used an inner joion to only capture matching values between my employee, titles and department employee tables. The final table   contains the following data points:
+Task description, Deliverable 2: Created a new table, exported as "mentorship_eligibility.csv," to hold employees eligible to participate in mentorship programs. I once more used inner joins to only capture matching values between my employee, titles and department employee tables. The final table contains the following data points:
 * Employee number
 * First and last name
 * Title
 * from_date and to_date
 
-I once more applied 
+I once more checked for duplicates and cleaned the data to only keep the most current positions for employees(mentorship_eligibility_noDup.csv).
+
+Lastly, I grouped the data by title for easier comparison. 
+![](https://github.com/Mar102/Pewlett-Hackard-Analysis/blob/master/Mentorship_byTitle.png)
+
 
