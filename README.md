@@ -1,7 +1,7 @@
 # Pewlett-Hackard-Analysis
 The assignment consists of three parts: two additional analyses and a technical report to deliver the results to his manager. To help him complete these tasks, you will submit the following deliverables:
 
-* Technical Analysis Deliverable 1: Number of Retiring Employees by Title. You will create three new tables, one showing number of [titles] retiring, one showing number of employees with each title, and one showing a list of current employees born between Jan. 1, 1952 and Dec. 31, 1955. New tables are exported as CSVs. 
+* Technical Analysis Deliverable 1: Number of retiring employees by itle. You will create three new tables, one showing number of [titles] retiring, one showing number of employees with each title, and one showing a list of current employees born between Jan. 1, 1952 and Dec. 31, 1955. New tables are exported as CSVs. 
 
 * Technical Analysis Deliverable 2: Mentorship Eligibility. A table containing employees who are eligible for the mentorship program You will submit your table and the CSV containing the data (and the CSV containing the data)
 
@@ -15,18 +15,23 @@ Summary of queries created for the project: https://github.com/Mar102/Pewlett-Ha
 Created a ERD diagram to guide the completion of deliverables.
 ![](https://github.com/Mar102/Pewlett-Hackard-Analysis/blob/master/EmployeeDB.png)
 
-Task description, Deliverable 1: I created a table containing the number of employees who are about to retire (those born 1952-1955), grouped by job title. I used an inner join to connect the previously created tables-- Current Employees, Titles and Salary -- to pull only the matching items between all values within the tables. After exporting it to a CSV file, employees_retiring_byTitle.csv, the able contained the following information:
+Task description, Deliverable 1: I created a table containing the number of employees who are about to retire (those born 1952-1955). I used an inner join to connect the previously created tables-- Current Employees, Titles and Salary -- to pull only the matching items between all values within the tables. After exporting it to a CSV file, retiring_byTitle.csv, the able contained the following information:
 - Employee number
 - First and last name
 - Title
 - from_date
 - Salary
 
-After noticing substantial duplicates in the data, I created a new table that includes only the most recent title of each employee, no duplicates. The duplicated items were assessed using partitions in data and saved under a new CSV file titled, "employees_retiring_noDup." The partition decreased the data from 54,722 to 33,118 values.
+After noticing substantial duplicates in the data, I created a new table that includes only the most recent title of each employee, no duplicates. The duplicated items were assessed using partitions in data and saved under a new CSV file titled, "retiring_noDup.csv" The partition decreased the data from 54,722 to 33,118 values.
 
-Task description, Deliverable 2: Created a new table to hold employees eligible to participate in mentorship programs:
+Then, I created another table to group my non-duplicated data by titles.
+![](https://github.com/Mar102/Pewlett-Hackard-Analysis/blob/master/EmployeesRetiringbyTitle.png)
+
+Task description, Deliverable 2: Created a new table, exported as "mentorship_eligibility.csv," to hold employees eligible to participate in mentorship programs. I once more used an inner joion to only capture matching values between my employee, titles and department employee tables. The final table   contains the following data points:
 * Employee number
 * First and last name
 * Title
 * from_date and to_date
+
+I once more applied 
 
