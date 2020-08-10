@@ -36,6 +36,6 @@ Task description, Deliverable 2: Created a new table, exported as "mentorship_el
 I once more checked for duplicates and cleaned the data to only keep the most current positions for employees(mentorship_eligibility_noDup.csv).
 
 Lastly, I grouped the data by title for easier comparison. 
-![](https://github.com/Mar102/Pewlett-Hackard-Analysis/blob/master/Mentorship_byTitle.png)
+![](https://github.com/Mar102/Pewlett-Hackard-Analysis/blob/master/Mentorship_byTitle.PNG)
 
 
